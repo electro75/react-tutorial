@@ -24,10 +24,10 @@ function Square(props) {
 
     handleClick(i){
         const squares = this.state.squares.slice();
-        if(calculateWinner(this.state.squares || squares[i])){
+        if(calculateWinner(squares) || squares[i]){
           return;
         }
-        squares[i] = this.state.xIsNext? 'O': 'X';
+        squares[i] = this.state.xIsNext? 'X': 'O';
         this.setState({
           squares: squares,
           xIsNext: !this.state.xIsNext
@@ -102,12 +102,12 @@ function Square(props) {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    lines.forEach((line)=>{
-      const [a, b, c] = line;
-      if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
       }
-    })
+    }
     return null;
   }
   
