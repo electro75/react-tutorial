@@ -1,6 +1,8 @@
+
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    background: url('./skulls.png')
   }
   
   ol, ul {
@@ -16,21 +18,29 @@ body {
   .status {
     margin-bottom: 10px;
   }
+
+  .btn {
+    margin: 1px;
+  }
   
   .square {
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     line-height: 34px;
-    height: 34px;
+    height: 100px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 100px;
   }
+
+  /* Board {
+    margin-left: 50px;
+  } */
   
   .square:focus {
     outline: none;
@@ -43,6 +53,8 @@ body {
   .game {
     display: flex;
     flex-direction: row;
+    margin-left: 33%;
+    margin-top: 10%;
   }
   
   .game-info {

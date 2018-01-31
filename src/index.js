@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Square(props) {
     
@@ -90,7 +91,7 @@ function Square(props) {
         const desc = move? 'Go to move #'+move : 'Go to Game Start';
         return (
           <li key={move} >
-            <button onClick={() => this.jumpTo(move)}> {desc} </button>
+            <button className="btn btn-group btn-primary" onClick={() => this.jumpTo(move)}> {desc} </button>
           </li>
         )
       })
