@@ -3,13 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Square(props) {
-    
+class Square extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      styles: {
+        backgroundColor: 'black',
+        color: 'white'
+      }
+    }
+
+  }
+
+  render(){    
     return (
-        <button className="square" onClick={props.onClick}>
-          {props.value}
+        <button className="square" style={this.state.styles} onClick={this.props.onClick}>
+          {this.props.value}
         </button>
       );
+    }
   }
   
   class Board extends React.Component {
@@ -140,6 +153,7 @@ function Square(props) {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        Square.winnerLine([a, b, c])
         return squares[a];
       }
     }
